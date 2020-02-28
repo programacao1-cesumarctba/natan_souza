@@ -16,20 +16,22 @@ import java.util.Scanner;
  */
 
 public class Main {
-
+    // Scanner
+    private final Scanner inp;
+    
     public static void main(String[] args) {
         // @Variables
         int x;
 
         // Define o local para padrão US.
-        Locale.setDefault(Locale.US);
-
-        // Inicializa um Scanner no System.in.
-        Scanner inp = new Scanner(System.in);
+        Locale.setDefault(Locale.US);        
 
         /**
          *  Ex 1
          */
+        
+        // Inicializa um Scanner no System.in.
+        inp = new Scanner(System.in);
 
         // Exibe no console uma mensagem.
         System.out.println("Please enter an integer value:");
@@ -44,13 +46,16 @@ public class Main {
             System.out.println("The value of: " + x + " is odd");
         }
 
-        // Remove o valor do Scanner.
-        inp.nextLine();
+        // Remove o Scanner do System.in
+        inp.close();
 
         /**
          *  Ex 2
          */
-
+        
+        // Inicializa um Scanner no System.in.
+        inp = new Scanner(System.in);
+        
         // Exibe no console uma mensagem.
         System.out.println("Please enter an integer value to see the conditions:");
 
@@ -68,13 +73,16 @@ public class Main {
             System.out.println("Não é estranho");
         }
 
-        // Remove o valor do Scanner.
-        inp.nextLine();
+        // Remove o Scanner do System.in
+        inp.close();
 
         /**
          *  Ex 3
          */
-
+        
+        // Inicializa um Scanner no System.in.
+        inp = new Scanner(System.in);
+        
         // Exibe no console uma mensagem.
         System.out.println("Please enter an integer value to calculate the factorial value:");
 
@@ -84,13 +92,16 @@ public class Main {
         // Calculate factorial of @Variables int x
         System.out.println("The factorial of: " + x + " is " + new Factorial().calcFact(x));
 
-        // Remove o valor do Scanner.
-        inp.nextLine();
+        // Remove o Scanner do System.in
+        inp.close();
 
         /**
          *  Ex 4
          */
-
+        
+        // Inicializa um Scanner no System.in.
+        inp = new Scanner(System.in);
+        
         // Exibe no console uma mensagem.
         System.out.println("Please enter an integer value to calculate the times table from 0 to 10:");
 
