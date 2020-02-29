@@ -1,6 +1,7 @@
 package com.ads;
 
 import com.ads.entities.Factorial;
+import com.ads.entities.Bhaskara;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -11,17 +12,17 @@ import java.util.Scanner;
  *  2 - Dado um valor inteiro N, verifique as seguintes condições: . Se N for impar, exiba "Estranho" . Se N for par e for menor que 10, exiba "Não é estranho" . Se N for par e estiver entre 10 e 20, exiba "Estranho" . Se N for par e for maior que 20, exiba "Não é estranho"
  *  3 - Sabendo que o fatorial de um valor N é: -----> n! = n x (x - 1) x (n - 2) x (n - 3) x ... x 2 x 1. Crie um código que leia um valor inteiro e retorne seu fatorial e seu resultado.
  *  4 - Crie um programa que receba um valor numerico inteiro N, e calcule a tabuada completa desse numero de 1 até 10. Imprimindo linha a linha da tabuada. 2 x 1 = 2 2 x 2 = 4 2 x 3 = 6...
+ *  5 - Crie uma classe chamada Bhaskara, e um programa que importe essa classe para um main e a excute.
  *
  *  Author: Natan Souza
  */
 
 public class Main {
-    // Scanner
-    private final Scanner inp;
     
     public static void main(String[] args) {
         // @Variables
-        int x;
+        int x = 0;
+        double a, b, c = 0.0;
 
         // Define o local para padrão US.
         Locale.setDefault(Locale.US);        
@@ -31,7 +32,7 @@ public class Main {
          */
         
         // Inicializa um Scanner no System.in.
-        inp = new Scanner(System.in);
+        Scanner inp = new Scanner(System.in);
 
         // Exibe no console uma mensagem.
         System.out.println("Please enter an integer value:");
@@ -46,15 +47,12 @@ public class Main {
             System.out.println("The value of: " + x + " is odd");
         }
 
-        // Remove o Scanner do System.in
-        inp.close();
+        // Remove o valor do Scanner.
+        inp.nextLine();
 
         /**
          *  Ex 2
          */
-        
-        // Inicializa um Scanner no System.in.
-        inp = new Scanner(System.in);
         
         // Exibe no console uma mensagem.
         System.out.println("Please enter an integer value to see the conditions:");
@@ -73,15 +71,12 @@ public class Main {
             System.out.println("Não é estranho");
         }
 
-        // Remove o Scanner do System.in
-        inp.close();
+        // Remove o valor do Scanner.
+        inp.nextLine();
 
         /**
          *  Ex 3
          */
-        
-        // Inicializa um Scanner no System.in.
-        inp = new Scanner(System.in);
         
         // Exibe no console uma mensagem.
         System.out.println("Please enter an integer value to calculate the factorial value:");
@@ -92,15 +87,12 @@ public class Main {
         // Calculate factorial of @Variables int x
         System.out.println("The factorial of: " + x + " is " + new Factorial().calcFact(x));
 
-        // Remove o Scanner do System.in
-        inp.close();
+        // Remove o valor do Scanner.
+        inp.nextLine();
 
         /**
          *  Ex 4
          */
-        
-        // Inicializa um Scanner no System.in.
-        inp = new Scanner(System.in);
         
         // Exibe no console uma mensagem.
         System.out.println("Please enter an integer value to calculate the times table from 0 to 10:");
@@ -110,10 +102,45 @@ public class Main {
 
         // Calcula e imprime o valor linha a linha.
         for (int i = 0; i <= 10; i++) {
-            System.out.println(x + "x" + i + " é " + x*i);
+            System.out.println(x + "x" + i + " is " + x*i);
         }
+
+        // Remove o valor do Scanner.
+        inp.nextLine();
+
+        /**
+         *  Ex 5
+         */
+
+        // Exibe no console uma mensagem.
+        System.out.println("Bhaskara Formula");
+
+        // Exibe no console uma mensagem.
+        System.out.println("Please enter the first value:");
+
+        // Recebe via Scanner o valor.
+        a = inp.nextDouble();
+
+        // Exibe no console uma mensagem.
+        System.out.println("Please enter the second value:");
+
+        // Recebe via Scanner o valor.
+        b = inp.nextDouble();
+
+        // Exibe no console uma mensagem.
+        System.out.println("Please enter the third value:");
+
+        // Recebe via Scanner o valor.
+        c = inp.nextDouble();
+
+        // Instânciamos a classe com os valores via metodo construtor.
+        Bhaskara bask = new Bhaskara(a, b, c);
+
+        // Retornamos a classificação
+        System.out.println(bask.classificacao());
 
         // Remove o Scanner do System.in
         inp.close();
+
     }
 }
